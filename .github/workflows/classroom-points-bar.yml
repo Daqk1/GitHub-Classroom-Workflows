@@ -7,9 +7,9 @@ name: GitHub Classroom Workflow
 on: 
   push:
     branches:
-    - '*'
-    - '!status'
-    - '!feedback'
+      - '*'
+      - '!status'
+      - '!feedback'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,6 +29,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      # Compile GoogleBillboard.java
+      - name: Compile GoogleBillboard
+        run: javac main/java/GoogleBillboard.java
+
+      # Run GoogleBillboard
+      - name: Run GoogleBillboard
+        run: java -cp main/java GoogleBillboard
+
       # run grading
       # add id to step so outputs can be referenced
       - uses: education/autograding@v1
