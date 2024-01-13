@@ -3,7 +3,7 @@
         {
             "name": "Test 1",
             "setup": "",
-            "run": "echo 'Test 1'",
+            "run": "main/java/GoogleBillboard.java",
             "input": "",
             "output": "",
             "comparison": "included",
